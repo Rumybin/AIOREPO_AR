@@ -1,125 +1,156 @@
-/* Reset default styles */
+/* Reset default margin and padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* General styling */
+/* General styling */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Ensure body takes full width */
+    background-color: #212122; /* Menambahkan warna hitam sebagai background */
+    color: white; /* Jika diperlukan, ubah warna teks menjadi putih untuk kontras */
 }
 
-/* Header styling */
+
+/* Style for the header */
 header {
-    background-color: #520404;
+    width: 100%; /* Full width of the parent container */
+    background-color: #6c1b05;
     color: white;
-    padding: 1rem 0;
+    height: 40px; /* Fixed height */
     text-align: center;
+    line-height: 40px; /* Vertically center the text */
 }
 
-header h1 {
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
+/* Main content styling */
+.main-content {
+    text-align: center;
+    margin-top: 20px;
 }
 
-nav ul {
-    list-style-type: none;
+h1, h2 {
+    margin: 0;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 1rem;
+h1 {
+    font-size: 24px;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+/* Style for boxes */
+.box {
+    display: inline-block;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-align: center;
+    cursor: pointer;
+    margin: 0; /* Pastikan margin 0 pada kotak */
+    padding: 0; /* Menghilangkan padding pada kotak */
 }
 
-/* Section styling */
-section {
+/* Style untuk kotak */
+.large-box {
+    width: 100%;
     max-width: 1200px;
-    margin: 2rem auto;
-    padding: 1rem;
-}
-
-/* Program container using CSS grid */
-.program-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-/* Each program box (kotak) */
-.program-box {
-    background-color: white;
-    padding: 1.5rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-.program-box h3 {
-    font-size: 1.5rem;
-    color: #003366;
-    margin-bottom: 1rem;
-}
-
-.program-box ul {
-    list-style-type: disc;
-    margin-left: 1.5rem;
-}
-
-.container {
-    width: 90%;
-    margin: 20px auto;
-}
-
-.info-section {
-    padding: 20px;
-}
-
-.cards {
-    display: flex; /* atau grid */
-    flex-wrap: wrap; /* Membuat elemen card membungkus ke baris baru */
-    gap: 20px; /* Menambah jarak antara kolom */
-}
-
-.card {
-    background-color: #aedff4;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 300px;
     overflow: hidden;
-    text-align: center;
-    transition: transform 0.2s;
+    margin-bottom: 10px;
+    background-color: #f0f0f0;
+    position: relative;
+    border-radius: 30px; /* Tambahkan ini untuk membuat sudut tidak lancip */
+}
+/* Style untuk gambar */
+.large-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Menghilangkan jarak default dari gambar */
+    margin: 0; /* Pastikan margin 0 pada gambar */
+    padding: 0; /* Pastikan padding 0 pada gambar */
+}
+.large-box {
+    position: relative; /* Agar teks bisa diatur posisinya relatif terhadap kotak */
+}
+
+.box-container {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    /* Ukuran tetap menggunakan rem untuk konsistensi */
-    max-width: 100%; /* Memastikan kartu tidak melampaui lebar kontainer */
-    height: auto; /* Menjaga tinggi sesuai konten */
+    width: 100%; /* Full width on small devices */
+    max-width: 320px; /* Limit width on larger screens */
+    margin: 0 auto;
 }
 
-.program-box ul li {
-    margin-bottom: 0.5rem;
+
+/* Container untuk kedua small boxes */
+/* Container untuk dua kotak kecil */
+.small-box-container {
+    display: flex;
+    gap: 10px; /* Jarak antar box */
+    max-width: 1200px; /* Batas maksimum sama dengan large-box */
+    margin: 0 auto; /* Agar berada di tengah */
 }
 
-/* Footer styling */
-footer {
-    background-color: #003366;
+
+
+.small-box {
+    width: calc(50% - 5px); /* Box dibagi dua dengan jarak 5px */
+    height: 300px;
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+    position: relative;
+    border-radius: 30px; /* Sudut tidak lancip */
+    overflow: hidden;
+}
+
+/* Hover effects */
+.box:hover {
+    background-color: #ddd;
+}
+/* Style for the overlay text */
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: white;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
+    font-size: 80px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif; /* Font kaku dan tebal */
+    text-transform: uppercase;
+    pointer-events: none;
+    -webkit-text-stroke: 2px black; /* Menambahkan stroke hitam pada teks */
 }
 
-footer p {
-    font-size: 0.9rem;
+/* Update untuk box besar agar menggunakan relative position */
+
+
+/* Responsive styling for mobile devices */
+@media only screen and (max-width: 600px) {
+    header {
+        height: 40px;
+        font-size: 18px; /* Adjust font size for small screens */
+    }
+    
+    .large-box {
+        width: 100%; /* Ensure large box takes full width */
+    }
+
+    .box-container {
+        flex-direction: column; /* Stack boxes vertically */
+        width: 100%;
+    }
+
+    .small-box {
+        width: 100%; /* Each small box takes full width */
+        margin: 10px 0;
+    }
 }
