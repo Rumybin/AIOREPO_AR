@@ -44,9 +44,7 @@
                 <p>Tidak ARIF.</p>
             <?php endif; ?>
         </div>
-        <div class="center-box">
-            Ekstra Hari Ini
-        </div>
+        
 
         <!-- Tambahkan script di bawah ini untuk menghubungkan JS -->
         <script src="<?= base_url('js/programLoop.js'); ?>"></script>
