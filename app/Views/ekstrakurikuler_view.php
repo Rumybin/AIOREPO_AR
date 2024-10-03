@@ -28,7 +28,7 @@
         <h2>Jadwal Hari Ini: <?= esc($hariini); ?></h2> <!-- Menampilkan nama hari saat ini -->
 
         <!-- Loop pertama untuk menampilkan ekstrakurikuler berdasarkan hari ini (Controller 1) -->
-        <h2>Ini perubahan dari bintang</h2>
+        <h2>Ini edit dari github #2</h2>
 
         <!-- View File -->
         <div class="ekstra-hari-ini">
