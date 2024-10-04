@@ -1,156 +1,247 @@
-/* Reset default margin and padding */
+/* 
+=========================
+Reset Default Margin dan Padding
+=========================
+Menghapus margin dan padding default dari semua elemen untuk memastikan konsistensi.
+*/
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Mengatur box-sizing untuk menghitung padding dan border dalam total width dan height */
 }
 
-/* General styling */
-/* General styling */
+/* 
+=========================
+Gaya Umum
+=========================
+Mengatur gaya dasar untuk seluruh halaman.
+*/
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    width: 100%; /* Ensure body takes full width */
-    background-color: #212122; /* Menambahkan warna hitam sebagai background */
-    color: white; /* Jika diperlukan, ubah warna teks menjadi putih untuk kontras */
+    font-family: Arial, sans-serif; /* Font yang digunakan */
+    width: 100%; /* Memastikan body mengambil lebar penuh */
+    background-color: #393E46; /* Warna latar belakang */
+    color: white; /* Warna teks untuk kontras */
 }
 
-
-/* Style for the header */
+/* 
+=========================
+Header
+=========================
+Gaya untuk header halaman.
+*/
 header {
-    width: 100%; /* Full width of the parent container */
-    background-color: #6c1b05;
-    color: white;
-    height: 40px; /* Fixed height */
-    text-align: center;
-    line-height: 40px; /* Vertically center the text */
+    width: 100%; /* Lebar penuh dari kontainer induk */
+    background-color: #222831; /* Warna latar belakang header */
+    color: white; /* Warna teks header */
+    height: 40px; /* Tinggi header */
+    text-align: center; /* Menyusun teks di tengah */
+    line-height: 40px; /* Mengatur tinggi baris agar teks terletak di tengah secara vertikal */
 }
 
-/* Main content styling */
+/* 
+=========================
+Gaya Konten Utama
+=========================
+Mengatur gaya untuk konten utama di dalam halaman.
+*/
 .main-content {
-    text-align: center;
-    margin-top: 20px;
-}
-
-h1, h2 {
-    margin: 0;
+    text-align: center; /* Menyusun teks di tengah */
+    margin-top: 20px; /* Jarak atas dari elemen sebelumnya */
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 24px; /* Ukuran font untuk judul utama */
+    margin: 0; /* Menghilangkan margin default */
 }
 
 h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
+    font-size: 22px; /* Ukuran font untuk sub-judul */
+    margin-bottom: 20px; /* Jarak bawah dari elemen h2 */
 }
 
-/* Style for boxes */
-.box {
-    display: inline-block;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    text-align: center;
-    cursor: pointer;
-    margin: 0; /* Pastikan margin 0 pada kotak */
-    padding: 0; /* Menghilangkan padding pada kotak */
+/* 
+=========================
+Container untuk Large-Box dan Slideshow
+=========================
+Mengatur gaya untuk kontainer yang mencakup large-box dan slideshow.
+*/
+.container {
+    max-width: 1200px; /* Mengatur lebar maksimum untuk kontainer */
+    margin: 0 auto; /* Memusatkan kontainer di halaman */
+    padding: 20px; /* Padding di dalam kontainer */
+    background-color: #2C2F33; /* Warna latar belakang untuk kontainer */
+    border-radius: 20px; /* Sudut membulat pada kontainer */
+    position: relative; /* Memungkinkan positioning elemen di dalamnya */
 }
 
-/* Style untuk kotak */
+/* 
+=========================
+Gaya Slideshow
+=========================
+Mengatur gaya untuk slideshow.
+*/
+.slideshow-container {
+    position: relative; /* Memungkinkan positioning elemen di dalamnya */
+    width: 100%; /* Memastikan lebar penuh dari kontainer */
+    max-width: 1452px; /* Lebar maksimum untuk slideshow */
+    height: 0; /* Mengatur tinggi ke 0 untuk menyesuaikan dengan padding */
+    padding-top: 41.32%; /* Mempertahankan rasio aspek 1:2.42 */
+    overflow: hidden; /* Menghilangkan bagian gambar yang melampaui batas */
+    border-radius: 30px; /* Sudut membulat pada slideshow */
+    margin: 0 auto; /* Memusatkan slideshow secara horizontal */
+    margin-bottom: 20px; /* Jarak bawah dari slideshow */
+}
+
+.slideshow-container img {
+    position: absolute; /* Memungkinkan gambar untuk menempati seluruh ruang kontainer */
+    top: 0; /* Menyusun gambar di bagian atas */
+    left: 0; /* Menyusun gambar di sisi kiri */
+    width: 100%; /* Memastikan gambar mengambil lebar penuh */
+    height: 100%; /* Memastikan gambar mengambil tinggi penuh */
+    object-fit: cover; /* Memastikan gambar mengisi kontainer tanpa distorsi */
+}
+
+/* 
+=========================
+Pengaturan Slide
+=========================
+Mengatur pengaturan untuk slide dalam slideshow.
+*/
+.mySlides {
+    display: none; /* Menyembunyikan semua slide secara default */
+}
+
+/* 
+=========================
+Animasi Fade
+=========================
+Menambahkan efek animasi pada slide.
+*/
+.fade {
+    animation-name: fade; /* Nama animasi yang digunakan */
+    animation-duration: 0.5s; /* Durasi animasi */
+}
+
+@keyframes fade {
+    from {opacity: .4} /* Mengatur opacity awal */
+    to {opacity: 1} /* Mengatur opacity akhir */
+}
+
+/* 
+=========================
+Indikator Titik
+=========================
+Mengatur gaya untuk indikator titik di bawah slideshow.
+*/
+.dot {
+    cursor: pointer; /* Menunjukkan bahwa elemen dapat diklik */
+    height: 15px; /* Tinggi indikator */
+    width: 15px; /* Lebar indikator */
+    margin: 0 2px; /* Jarak antara indikator */
+    background-color: #bbb; /* Warna latar belakang indikator */
+    border-radius: 50%; /* Membuat indikator berbentuk bulat */
+    display: inline-block; /* Menampilkan indikator dalam baris */
+    transition: background-color 0.6s ease; /* Efek transisi saat hover */
+}
+
+.active, .dot:hover {
+    background-color: #717171; /* Warna saat indikator aktif atau di-hover */
+}
+
+/* 
+=========================
+Gaya Kotak Besar
+=========================
+Mengatur gaya untuk kotak besar.
+*/
 .large-box {
-    width: 100%;
-    max-width: 1200px;
-    height: 300px;
-    overflow: hidden;
-    margin-bottom: 10px;
-    background-color: #f0f0f0;
-    position: relative;
-    border-radius: 30px; /* Tambahkan ini untuk membuat sudut tidak lancip */
+    width: 100%; /* Memastikan lebar penuh */
+    max-width: 1200px; /* Lebar maksimum untuk kotak besar */
+    height: 300px; /* Tinggi kotak besar */
+    overflow: hidden; /* Menghilangkan bagian yang melampaui batas */
+    position: relative; /* Memungkinkan positioning elemen di dalamnya */
+    border-radius: 30px; /* Sudut membulat pada kotak besar */
+    margin-bottom: 40px; /* Jarak bawah dari kotak besar */
 }
-/* Style untuk gambar */
+
 .large-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block; /* Menghilangkan jarak default dari gambar */
-    margin: 0; /* Pastikan margin 0 pada gambar */
-    padding: 0; /* Pastikan padding 0 pada gambar */
-}
-.large-box {
-    position: relative; /* Agar teks bisa diatur posisinya relatif terhadap kotak */
+    width: 100%; /* Memastikan gambar mengambil lebar penuh */
+    height: 100%; /* Memastikan gambar mengambil tinggi penuh */
+    object-fit: cover; /* Memastikan gambar mengisi kontainer tanpa distorsi */
+    display: block; /* Menyusun gambar sebagai blok */
 }
 
-.box-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%; /* Full width on small devices */
-    max-width: 320px; /* Limit width on larger screens */
-    margin: 0 auto;
-}
-
-
-/* Container untuk kedua small boxes */
-/* Container untuk dua kotak kecil */
+/* 
+=========================
+Gaya Kotak Kecil
+=========================
+Mengatur gaya untuk kotak kecil.
+*/
 .small-box-container {
-    display: flex;
-    gap: 10px; /* Jarak antar box */
-    max-width: 1200px; /* Batas maksimum sama dengan large-box */
-    margin: 0 auto; /* Agar berada di tengah */
+    display: flex; /* Menggunakan flexbox untuk menyusun kotak kecil */
+    gap: 10px; /* Jarak antara kotak kecil */
+    max-width: 1200px; /* Lebar maksimum untuk container kotak kecil */
+    margin: 0 auto; /* Memusatkan container kotak kecil */
 }
-
-
 
 .small-box {
-    width: calc(50% - 5px); /* Box dibagi dua dengan jarak 5px */
-    height: 300px;
-    background-color: #f0f0f0;
-    margin-bottom: 10px;
-    position: relative;
-    border-radius: 30px; /* Sudut tidak lancip */
-    overflow: hidden;
+    width: calc(50% - 5px); /* Menghitung lebar kotak kecil */
+    height: 300px; /* Tinggi kotak kecil */
+    background-color: #f0f0f0; /* Warna latar belakang kotak kecil */
+    margin-bottom: 10px; /* Jarak bawah dari kotak kecil */
+    border-radius: 30px; /* Sudut membulat pada kotak kecil */
 }
 
-/* Hover effects */
+/* 
+=========================
+Efek Hover untuk Kotak
+=========================
+Mengatur efek hover pada kotak.
+*/
 .box:hover {
-    background-color: #ddd;
+    background-color: #ddd; /* Warna latar belakang saat hover */
 }
-/* Style for the overlay text */
+
+/* 
+=========================
+Teks Overlay untuk Kotak Besar
+=========================
+Mengatur gaya untuk teks overlay di atas kotak besar.
+*/
 .overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 80px;
-    font-weight: bold;
-    font-family: 'Arial', sans-serif; /* Font kaku dan tebal */
-    text-transform: uppercase;
-    pointer-events: none;
-    -webkit-text-stroke: 2px black; /* Menambahkan stroke hitam pada teks */
+    position: absolute; /* Memungkinkan posisi overlay di atas kotak */
+    top: 50%; /* Menyusun di tengah secara vertikal */
+    left: 50%; /* Menyusun di tengah secara horizontal */
+    transform: translate(-50%, -50%); /* Mengatur posisi ke tengah secara tepat */
+    color: white; /* Warna teks overlay */
+    font-size: 80px; /* Ukuran font untuk overlay */
+    font-weight: bold; /* Ketebalan font */
+    text-transform: uppercase; /* Mengubah teks menjadi huruf kapital */
+    pointer-events: none; /* Menghindari interaksi dengan overlay */
+    -webkit-text-stroke: 2px black; /* Memberikan stroke pada teks */
 }
 
-/* Update untuk box besar agar menggunakan relative position */
-
-
-/* Responsive styling for mobile devices */
+/* 
+=========================
+Styling Responsif
+=========================
+Mengatur gaya untuk tampilan pada perangkat kecil.
+*/
 @media only screen and (max-width: 600px) {
     header {
-        height: 40px;
-        font-size: 18px; /* Adjust font size for small screens */
+        font-size: 18px; /* Ukuran font yang lebih kecil untuk header */
     }
-    
-    .large-box {
-        width: 100%; /* Ensure large box takes full width */
+
+    .slideshow-container {
+        width: 100%; /* Memastikan lebar penuh pada layar kecil */
     }
 
     .box-container {
-        flex-direction: column; /* Stack boxes vertically */
-        width: 100%;
+        flex-direction: column; /* Mengubah arah kotak kecil menjadi vertikal */
     }
 
     .small-box {
-        width: 100%; /* Each small box takes full width */
-        margin: 10px 0;
+        width: 100%; /* Mengatur lebar kotak kecil menjadi penuh */
+        margin: 10px 0; /* Jarak atas dan bawah untuk kotak kecil */
     }
 }
