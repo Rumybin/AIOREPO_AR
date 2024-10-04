@@ -1,0 +1,44 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Menghapus max-width dan margin auto dari section */
+section {
+    padding: 1rem;
+    /* Menghapus margin dan lebar maksimal untuk merapatkan konten ke kiri */
+}
+
+/* Program container using CSS grid */
+.program-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px; /* Jarak antar kotak */
+    justify-content: start; /* Merapatkan kotak ke kiri */
+    max-width: none; /* Menghapus batas lebar maksimal */
+}
+
+/* Each program box (kotak) */
+.program-box {
+    background-color: white;
+    padding: 1.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    min-width: 300px; /* Menetapkan lebar minimal */
+}
+
+/* Styling untuk judul kotak */
+.program-box h3 {
+    font-size: 1.5rem;
+    color: #003366;
+    margin-bottom: 1rem;
+}

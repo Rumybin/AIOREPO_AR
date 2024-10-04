@@ -2,17 +2,25 @@
 <html>
 <head>
     <title>Olympiad</title>
+    <!-- Menautkan CSS yang baru dibuat -->
+    <link rel="stylesheet" href="css/stylesolim.css">
 </head>
 <body>
-    <h1>Daftar Ekstrakurikuler Olimpiade</h1>
-    <ul>
-        <?php if (!empty($ekstra_olim)): ?>
-            <?php foreach ($ekstra_olim as $ekstra): ?>
-                <li><?= esc($ekstra['Nama']) ?></li>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <li>Tidak ada ekstrakurikuler olimpiade yang ditemukan.</li>
-        <?php endif; ?>
-    </ul>
+    <section>
+        <h1>Daftar Ekstrakurikuler Olimpiade</h1>
+        <div class="program-container">
+            <?php if (!empty($ekstra_olim)): ?>
+                <?php foreach ($ekstra_olim as $ekstra): ?>
+                    <div class="program-box">
+                        <h3><?= esc($ekstra['Nama']) ?></h3>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <div class="program-box">
+                    <p>Tidak ada ekstrakurikuler olimpiade yang ditemukan.</p>
+                </div>
+            <?php endif; ?>
+        </div>
+    </section>
 </body>
 </html>
