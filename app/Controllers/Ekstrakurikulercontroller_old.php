@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Models\ModelEkstra;
 use CodeIgniter\Controller;
 
-class Ekstrakurikulercontroller extends Controller
+class Ekstrakurikulercontroller_old extends Controller
 {
     public function index()
     {
