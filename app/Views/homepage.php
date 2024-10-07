@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INI COBA</title>
-    <link rel="stylesheet" href="<?= base_url('css/styles.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('css/styles_coba.css'); ?>">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <h1>INI COBA</h1>
@@ -92,6 +95,11 @@
     </footer>
 
     <!-- Memuat file JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="<?= base_url('js/slideshow.js'); ?>"></script>
 </body>
+
 </html>
